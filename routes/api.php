@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\GetController;
+use App\Http\Controllers\MainController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -9,6 +9,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
-//   Route::get('/get', 'GetController');
+    Route::get('/get', MainController::class);
 });
-   Route::get('/get', GetController::class);
